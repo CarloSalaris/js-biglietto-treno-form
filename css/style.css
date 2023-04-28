@@ -14,6 +14,7 @@ body {
 
 h2 {
     color: #fff;
+    margin-bottom: 15px;
 }
 
 /************************
@@ -36,10 +37,6 @@ align-items: center;
     STRUCTURE
 **************************/
 
-.block {
-    margin-bottom: 50px;
-}
-
 #ticket_input {
     border-radius: 10px;
 }
@@ -53,5 +50,12 @@ align-items: center;
     min-height: 150px;
 }
 
+.row {
+    border: dotted 2px rgb(255, 196, 0);
+}
+
+[class*="col"] {
+    border: 1px solid;
+}
 
 
