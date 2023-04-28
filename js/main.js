@@ -15,29 +15,42 @@ buttonConfirm.addEventListener("click",
 
         function () {
 
-            // Calcolo prezzo biglietto
+            //USER INPUT
+
+            const userName = document.getElementById("inputName").value; //Nome e Cognome
 
             const userKm = parseInt(document.getElementById("inputKm").value); // il numero di chilometri che vuole percorrere [userKm] 
             
             const userAge = document.getElementById("inputAge").value; // l’età del passeggero [userAge] (parseInt();)
 
-            const ticketPrice = userKm * kmPrice;
+            
+            // SCONTO (?):
 
-                // Sconto (?):
+            if (userAge == "minorenne") { // IF userAge < 18 {sconto del 20%}
 
-                if (userAge == "minorenne") { // IF userAge < 18 {sconto del 20%}
+                discount = 0.2; //20%
 
-                    discount = 0.2; //20%
+            }else if (userAge == "over65") { // ELSE IF userAge >= 65 {sconto del 40%}
+                
+                discount = 0.4; //40%
+            }
 
-                }else if (userAge == "over65") { // ELSE IF userAge >= 65 {sconto del 40%}
-                    
-                    discount = 0.4; //40%
-                }
+            
+            // PREZZO BIGLIETTO
+
+            let ticketPrice = (userKm * kmPrice);
+
+            ticketPrice -= ticketPrice * discount
 
             
             console.log("Quantità Km: ", userKm); //Perché non esce il primo Log in console?
-            console.log("discount value: ", discount);
-            console.log(`L'importo totale del biglietto sarà di ${(ticketPrice * discount).toFixed(2)} euro`);
+            console.log("Nome e Cognome Utente:", userName);
+            console.log("discount value:", discount);
+            console.log(`L'importo totale del biglietto sarà di ${(ticketPrice).toFixed(2)} euro`);
+
+            //SHOW HIDDEN DIV
+
+            
         }
 
 );
