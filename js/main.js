@@ -48,11 +48,14 @@ buttonConfirm.addEventListener("click",
             console.log("discount value:", discount);
             console.log(`L'importo totale del biglietto sarà di ${(ticketPrice).toFixed(2)} euro`);
 
+            
             //SHOW HIDDEN DIV
 
+            const ticketPreview = document.getElementById("ticketPreview");
+            ticketPreview.style.display = "block";
             
         }
-
+        
 );
 
 

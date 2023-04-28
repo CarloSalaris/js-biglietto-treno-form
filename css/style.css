@@ -30,8 +30,9 @@ align-items: center;
 }
 
 .hidden {
-    /* display: none; */
+    display: none;
 }
+
 
 /************************
     STRUCTURE
