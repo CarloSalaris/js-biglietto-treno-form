@@ -1,0 +1,57 @@
+/************************
+    GENERAL RULES
+**************************/
+
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+}
+
+/************************
+    UTILITIES
+**************************/
+
+.wrapper {
+height: 100vh;
+background-color: darkcyan;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.hidden {
+    /* display: none; */
+}
+
+/************************
+    STRUCTURE
+**************************/
+
+.block {
+    margin-bottom: 50px;
+}
+
+#ticket_input {
+    border-radius: 10px;
+}
+
+/************************
+    DEBUG
+**************************/
+
+#ticket_input,
+#ticket_info {
+    min-height: 150px;
+}
+
+
+
