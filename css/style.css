@@ -33,6 +33,10 @@ align-items: center;
     display: none;
 }
 
+.show {
+    display: flex;
+}
+
 
 /************************
     STRUCTURE
