@@ -34,6 +34,19 @@ buttonConfirm.addEventListener("click",
         console.log("Nome e Cognome Utente:", userName);
         console.log("discount value:", discount);
         console.log(`L'importo totale del biglietto sarà di ${(ticketPrice).toFixed(2)} euro`);
+
+        //USER OUTPUT
+        document.getElementById("outputName").innerHTML = userName;
+        document.getElementById("outputPrice").innerHTML = (ticketPrice).toFixed(2) + "€";
+
+            //SOUTPUT SCONTO
+            if (userAge == "minorenne") {
+                document.getElementById("outputDiscount").innerHTML = "Sconto minorenne (20%)";
+            }else if (userAge == "over65") {
+                document.getElementById("outputDiscount").innerHTML = "Sconto over 65 (40%)";
+            }else {
+                document.getElementById("outputDiscount").innerHTML = "Biglietto Standard";
+            }
     }
 );
 
@@ -52,6 +65,8 @@ formReset.addEventListener("click",
         history.go(0);
     }
 );
+
+
 
     
    
