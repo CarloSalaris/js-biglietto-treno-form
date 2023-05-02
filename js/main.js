@@ -1,8 +1,6 @@
 // Global variables
 
 const kmPrice = 0.21; // il prezzo del biglietto è definito in base ai km (0.21 € al km)
-const minor = document.getElementById("age1");
-const over65 = document.getElementById("age2");
 
 let discount = 0; //no discount
 
@@ -24,6 +22,8 @@ buttonConfirm.addEventListener("click",
             discount = 0.2; //20%
         }else if (userAge == "over65") { // ELSE IF userAge >= 65 {sconto del 40%}
             discount = 0.4; //40%
+        }else {
+            discount = 0; //In teoria inutile specificarlo di nuovo, però altrimenti non genera nuovamente senza prima annullare tutto.
         }
         
         // PREZZO BIGLIETTO
@@ -39,7 +39,7 @@ buttonConfirm.addEventListener("click",
         document.getElementById("outputName").innerHTML = userName;
         document.getElementById("outputPrice").innerHTML = (ticketPrice).toFixed(2) + "€";
 
-            //SOUTPUT SCONTO
+            //OUTPUT SCONTO
             if (userAge == "minorenne") {
                 document.getElementById("outputDiscount").innerHTML = "Sconto minorenne (20%)";
             }else if (userAge == "over65") {
@@ -47,12 +47,8 @@ buttonConfirm.addEventListener("click",
             }else {
                 document.getElementById("outputDiscount").innerHTML = "Biglietto Standard";
             }
-    }
-);
 
-buttonConfirm.addEventListener("click", 
-    //SHOW HIDDEN TICKET
-    function showHidden() {
+        //SHOW HIDDEN TICKET
         const ticketPreview = document.getElementById("ticketPreview");
         console.log(ticketPreview);
         ticketPreview.style.display = "flex";
@@ -60,7 +56,9 @@ buttonConfirm.addEventListener("click",
 );
 
 formReset.addEventListener("click",
+   
     //RESET ALL
+
     function resetAll() {
         history.go(0);
     }
